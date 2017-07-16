@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class AdjacencyMatrix {
 
-	static boolean[][] A = new boolean[10][10];
+	boolean[][] A = new boolean[10][10];
 
-	public static void initialize(int x, int y){
+	public void initialize(int x, int y){
 		for(int i = 0; i < x; i++){
 			for(int j = 0; j < y; j++){
 				//initialize every element of matrix to false
@@ -15,15 +15,12 @@ public class AdjacencyMatrix {
 		}
 	}
 
-	public static void main(String[] args){
-		int x, y, nodes, edges = 0;
-		initialize(10, 10);
+	public void createAdjacencyMatrix(int nodes, int edges){
+		int x, y;
+		initialize(nodes + 1, nodes + 1);
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Enter the number of nodes:");
-		nodes = scanner.nextInt();
-		System.out.println("Enter the number of edges:");
-		edges = scanner.nextInt();
-
+	
+		System.out.println("Enter the coordinates of edges for adjacent matrix: ");
 		for(int i = 0; i < edges; i++){
 			x = scanner.nextInt();
 			y = scanner.nextInt();
